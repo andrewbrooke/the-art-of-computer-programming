@@ -1,0 +1,33 @@
+{
+  "name": "the-art-of-computer-programming",
+  "version": "1.0.0",
+  "description": "Some code to go along with Donald Knuth's book series",
+  "main": "directory.js",
+  "scripts": {
+    "start": "node directory.js",
+    "test": "nyc --reporter=lcov mocha --recursive && nyc report",
+    "lint": "eslint volumes/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewbrooke/the-art-of-computer-programming.git"
+  },
+  "author": "Andrew Brooke <andrewbrooke15@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewbrooke/the-art-of-computer-programming/issues"
+  },
+  "homepage": "https://github.com/andrewbrooke/the-art-of-computer-programming#readme",
+  "dependencies": {
+    "commander": "^2.15.1",
+    "require-directory": "^2.1.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.3"
+  }
+}
