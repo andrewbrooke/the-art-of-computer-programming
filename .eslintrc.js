@@ -14,7 +14,7 @@ module.exports = {
         "linebreak-style": "off",
         "comma-dangle": "off",
         "indent": ["error", 4],
-        "max-len": ["error", 140],
+        "max-len": ["error", { code: 140, ignoreComments: true }],
         "no-console": "off",
         "no-undef": "error",
         "no-use-before-define": "off",
