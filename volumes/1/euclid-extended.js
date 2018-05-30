@@ -19,28 +19,21 @@ exports.default = (m, n) => {
     return exec(m, n);
 };
 
-const exec = (m, n) => {
-    // Initialize
-    let a1 = 1, b = 1;
-    let a = 0, b1 = 0;
-    let c = m, d = n;
-    let t; // temp
+const exec = (c, d, a = 0, a_ = 1, b = 1, b_ = 0) => { // Initialize
+    // Divide
+    let q = Math.floor(c / d);
+    let r = c % d;
 
-    while (true) { // eslint-disable-line
-        // Divide
-        let q = Math.floor(c / d);
-        let r = c % d;
+    // Remainder zero?
+    if (r === 0) return { a, b, d };
 
-        // Remainder zero?
-        if (r === 0) break;
+    // Recycle
+    let t;
+    c = d; d = r;
+    t = a_; a_ = a; a = t - q*a;
+    t = b_; b_ = b; b = t - q*b;
 
-        // Recycle
-        c = d; d = r;
-        t = a1; a1 = a; a = t - q*a;
-        t = b1; b1 = b; b = t - q*b;
-    }
-
-    return { a, b, d };
+    return exec(c, d, a, a_, b, b_);
 };
 
 /* istanbul ignore next */
