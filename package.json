@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node directory.js",
     "test": "nyc --reporter=lcov mocha --recursive && nyc report",
+    "coverage": "nyc --reporter=text-lcov mocha --recursive | coveralls",
     "lint": "eslint volumes/**"
   },
   "repository": {
@@ -25,6 +26,7 @@
   "devDependencies": {
     "babel-eslint": "^8.0.1",
     "chai": "^4.1.2",
+    "coveralls": "^3.0.1",
     "eslint": "^4.19.1",
     "eslint-config-google": "^0.9.1",
     "mocha": "^5.1.1",
